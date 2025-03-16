@@ -34,9 +34,9 @@ class InfoFileCreator(QWidget):
             layout.addLayout(entry_layout)
 
         button_layout = QHBoxLayout()
-        button_layout.addWidget(save_button)
-        button_layout.addWidget(cancel_all_button)
         button_layout.addWidget(exit_button)
+        button_layout.addWidget(cancel_all_button)
+        button_layout.addWidget(save_button)
         layout.addLayout(button_layout)
 
         self.setLayout(layout)
