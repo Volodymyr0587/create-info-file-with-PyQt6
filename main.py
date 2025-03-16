@@ -49,7 +49,8 @@ class InfoFileCreator(QWidget):
             'Name of YouTube Channel',
             'Project Directory',
             'Name of the Database',
-            'Link to GitHub'
+            'Link to GitHub',
+            'Source code',
         ]
 
         for field_name in field_names:
@@ -67,6 +68,7 @@ class InfoFileCreator(QWidget):
         project_directory = self.fields[4].text() or 'None'
         database_name = self.fields[5].text() or 'None'
         github_link = self.fields[6].text() or 'None'
+        source_code = self.fields[7].text() or 'None'
 
         default_file_name = video_name.replace(' ', '_')  # Use the video name as the default file name
 
@@ -78,7 +80,8 @@ class InfoFileCreator(QWidget):
                 content += f"[YouTube - {youtube_channel_name}]({youtube_channel_link})\n\n"
                 content += f"PROJECT FOLDER: {project_directory}\n\n"
                 content += f"DATABASE: {database_name}\n\n"
-                content += f"GITHUB: {github_link}"
+                content += f"GITHUB: {github_link}\n\n"
+                content += f"SOURCE CODE: {source_code}\n\n"
                 file.write(content)
 
             self.show_success_message(file_name, content)
